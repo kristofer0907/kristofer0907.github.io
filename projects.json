@@ -1,0 +1,59 @@
+[
+  {
+    "title": "Vision Based Process Monitoring",
+    "year": "2026",
+    "summary": "Perception monitoring to prevent failure states in automated production.",
+    "description": "The CaPEX department possesses an automated synthesis platform, however, no capabilities for preventing major failures in the automation such as chemical spillage, missing lab ware, and more nor any capabilitiy to record chemical changes. \n To notify the staff once a safety error happened or if a chemical change had occured, I designed a system that could monitor the automated platform consistently throughout day and night. \n Incorporating a Raspberry Pi 5 for processing data, Arducam with variable focus/exposure/zoom for viewage of the platform, and a LED panel for minimizing shadows created by the labware, along with custom made 3D prints for fixing all the equipment to the structure. In the end the system was capable of detecting the crucibles via classical opencv and then the safety faults via a batch median analysis. A dashboard was also created for ease of monitoring of the automation process, with active logging running in the background. The tuning of the classical CV proved to be more time consuming than anticipated, resulting in less time being available for other issues. The long gaps between images also provided a challenge in global tracking and consistent ID assignment, however, by pinpointing the most important area for the researchers, I was able to avoid occlusions and instead keep the ID assignment between two locations with a short distance between and no occlusions.   ",
+    "tags": [
+      "Python",
+      "OpenCV"
+    ],
+    "images": [
+      "images/platform.jpg",
+      "images/dashboard.jpg"
+    ],
+    "links": {
+      "github": "https://github.com/kristofer0907/Computer-Vision-CapEx-",
+      "demo": ""
+    }
+  },
+  {
+    "title": "Detection of Tomatoes in Greenhouse Environment",
+    "year": "2025",
+    "summary": "Tomato detection in a greenhouse environment using a lightweight YOLOv8 model, built as the perception part of an autonomous harvesting robot.",
+    "description": "Harvesting robots in greenhouses need to know where the tomatoes are, which is harder than it sounds since the plants are dense and the lighting changes throughout the day.\n\nI built the full detection pipeline from scratch, starting with collecting the images myself. I defined and supervised the data annotation, including the bounding box labeling and the definitions for the ripeness categories, so the training data stayed consistent and high quality. From there I fine tuned a YOLOv8n model, picking the nano version so it would stay light enough to run on a robot rather than a big workstation.\n\nThe final model reached 93% precision and between 90-95% mAP50. The hardest part was the real world conditions, tomatoes grow in clusters, hide behind leaves and each other, and look very different under different lighting. A lot of the time went into the dataset rather than the model itself, since the annotation quality ended up mattering more than any training setting I changed.",
+    "tags": [
+      "Python",
+      "YOLOv8",
+      "PyTorch"
+    ],
+    "images": [
+      "images/good_result3.jpg",
+      "images/results.png"
+    ],
+    "links": {
+      "github": "",
+      "demo": ""
+    }
+  },
+  {
+    "title": "NAVALOC",
+    "year": "2023",
+    "summary": "Wearable LiDAR and IMU backpack for mapping places where GPS doesn't work, like caves and underground tunnels.",
+    "description": "GPS doesn't work underground or inside caves, which is a real problem for things like search and rescue where an accurate map can make a big difference. The products that already exist for mapping these places cost around 3,500,000 ISK and are heavy and not built for long missions, so as a group of six in the Engineering X course at Reykjavik University we set out to build a cheaper version on a 300,000 ISK budget.\n\nThe result was NAVALOC, a backpack that carries an RPLIDAR for scanning the surroundings, two BNO055 IMUs for tracking orientation, and a Gigabyte mini PC that collects and stores all the data, powered by two LiPo batteries. The idea was that as the user walks through an area, the LiDAR scans slice after slice of the surroundings, and the IMU data is used to stitch those slices together into one global 3D point cloud of everywhere they walked. An Arduino Mega reads the IMUs and handles the status LEDs and push buttons, so the person wearing it can tell right away if something stopped working, since a silent failure halfway through a cave would mean losing the whole map.\n\nEverything is mounted on a backplate fixed to the backpack, which ended up being one of the harder parts, keeping all the equipment stable while still being comfortable to carry for a few hours and staying well under the 25 kg limit.",
+    "tags": [
+      "LiDAR",
+      "Arduino",
+      "Embedded",
+      "Sensor fusion"
+    ],
+    "images": [
+      "images/backpack.jpeg",
+      "images/navaloc-cover.jpg",
+      "images/navaloc-straps.jpg"
+    ],
+    "links": {
+      "github": "https://github.com/kristofer0907/Portable-Embedded-Navigation-System"
+    }
+  }
+]

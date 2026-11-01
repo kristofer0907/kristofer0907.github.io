@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- EDIT: your name -->
+  <title>Kristofer Kristjansson — Projects</title>
+  <meta name="description" content="Portfolio of robotics, autonomy and software projects.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Set theme before paint to avoid a flash (dark is the default)
+    try {
+      var t = localStorage.getItem('theme');
+      if (t) document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <!-- EDIT: your initials / name -->
+      <a href="#" class="logo mono">KK<span class="dot">_</span></a>
+      <nav class="mono">
+        <a href="#projects">Projects</a>
+        <a href="#about">About Me</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark">◐</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <canvas id="swarm" aria-hidden="true"></canvas>
+      <div class="wrap hero-inner">
+        <p class="label mono">[ Robotics · Autonomy · Mechatronics ]</p>
+        <!-- EDIT: your name + one-line description -->
+        <h1>Kristofer Kristjansson</h1>
+        <p class="lede">Engineering student building autonomous systems — from swarm coordination in simulation to hardware that has to work in the field.</p>
+        <dl class="facts mono">
+          <!-- EDIT: quick facts -->
+          <div><dt>Based in</dt><dd>Copenhagen, Denmark</dd></div>
+          <div><dt>Focus</dt><dd>Swarm robotics · Perception · Autonomous robotics · Mechatronics</dd></div>
+          <div><dt>Currently</dt><dd>MSc student, Denmark Technical University</dd></div>
+        </dl>
+      </div>
+      <a href="#projects" class="scroll-cue mono" aria-label="Scroll to projects">Scroll ↓</a>
+    </section>
+
+    <section class="marquee-section" aria-label="Institutions and companies I've worked with">
+      <div class="wrap"><p class="label mono">Worked with &amp; alongside</p></div>
+      <div class="marquee">
+        <!-- EDIT: institutions / companies. Order doesn't matter; the list is looped automatically. -->
+        <ul class="marquee-track" id="marquee-track">
+          <li>RiACT</li>
+          <li>DTU CaPEX Dep.</li>
+          <li>Verra Mobility</li>
+          <li>ASU Nano-Electronics Dep. </li>
+          <li>RU</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="label mono">01 — Work</p>
+          <h2>Projects</h2>
+          <div class="rail-controls">
+            <span id="project-count" class="mono muted"></span>
+            <button class="rail-btn" id="rail-prev" aria-label="Previous projects">←</button>
+            <button class="rail-btn" id="rail-next" aria-label="Next projects">→</button>
+          </div>
+        </div>
+        <div id="grid" class="rail"></div>
+        <div class="rail-progress" aria-hidden="true"><span id="rail-thumb"></span></div>
+        <noscript><p>Enable JavaScript to see the project list.</p></noscript>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="wrap two-col">
+        <div>
+          <p class="label mono">02 — Profile</p>
+          <h2>About</h2>
+        </div>
+        <div>
+          <!-- EDIT: about paragraph -->
+          <p class="big">Hi, I am a 24 year old MSc student at Denmark Technical University studying Autonomous Systems.</p>
+          <p class="muted">As you can tell by the projects presented, I have a deep interest in camera action enabling perception, system autonomy, and mechatronics. I mainly enjoy the process of designing physical and software systems from scratch and then building and finally testing (repeatedly...) until success finally!</p>
+          <p class="mono muted small">Tools: Python · C++ · ROS 2 · Gazebo · OpenCV · PyTorch · Linux</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv" class="section">
+      <div class="wrap two-col">
+        <div>
+          <p class="label mono">03 — Record</p>
+          <h2>CV</h2>
+          <!-- EDIT: drop your CV into the folder as cv.pdf -->
+          <a href="cv.pdf" class="btn mono" download="Kristofer-Kristjansson-CV.pdf">Download PDF ↓</a>
+        </div>
+        <div class="cv">
+          <h3 class="cv-heading mono">Summary</h3>
+          <p class="cv-summary">M.Sc. Autonomous Systems student with hands-on experience in robotics, computer vision applications and sensor integration. Skilled in Python, real-time imaging pipelines and computer vision, with a strong interest in computer vision for the medical industry.</p>
+
+          <h3 class="cv-heading mono">Experience</h3>
+          <ol class="timeline">
+            <!-- EDIT: experience entries, newest first -->
+            <li>
+              <span class="when mono">02/2026 — Now</span>
+              <div>
+                <h4>Junior Robotics Engineer · RiACT</h4>
+                <p>Copenhagen, Denmark</p>
+                <ul class="points">
+                  <li>Built Python and Linux automation tools for internal use, simplifying workflows in an agile team.</li>
+                  <li>Co-designed and implemented a Python API client for camera server integration, enabling accurate image and detection retrieval.</li>
+                  <li>Co-developed a hand-eye calibration tool for 3rd-party camera systems, including driver implementation, testing and optical calibration.</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <span class="when mono">03/2024 — 07/2025</span>
+              <div>
+                <h4>Hardware Engineer · Verra Mobility</h4>
+                <p>Arizona, USA</p>
+                <ul class="points">
+                  <li>Troubleshot and resolved software and hardware issues in traffic camera systems.</li>
+                  <li>Designed and performed quality control processes to reduce electrical and software malfunctions.</li>
+                  <li>Led joint projects in collaboration with multiple departments and partner companies.</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <span class="when mono">06/2023 — 08/2023</span>
+              <div>
+                <h4>Summer Undergraduate Research Intern · Arizona State University</h4>
+                <p>Arizona, USA</p>
+                <ul class="points">
+                  <li>Developed an automated microchip measurement system using PLCs, DAQ and motion control, cutting test time from hours to under 60 seconds.</li>
+                  <li>Awarded the SURI 2023 Fellowship for exceptional research contributions.</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+
+          <h3 class="cv-heading mono">Education</h3>
+          <ol class="timeline">
+            <!-- EDIT: education entries -->
+            <li>
+              <span class="when mono">Grad. 2027</span>
+              <div>
+                <h4>M.Sc. Autonomous Systems</h4>
+                <p>Technical University of Denmark (DTU) · Lyngby, Denmark</p>
+              </div>
+            </li>
+            <li>
+              <span class="when mono">Grad. 2024</span>
+              <div>
+                <h4>B.Sc. Mechatronics Engineering</h4>
+                <p>Reykjavik University · Reykjavik, Iceland</p>
+              </div>
+            </li>
+          </ol>
+
+          <h3 class="cv-heading mono">Skills</h3>
+          <p class="mono muted small cv-skills">C++ · Python · Ubuntu Linux · ROS 2 · PyTorch · OpenCV · NumPy · Jupyter · Git</p>
+
+          <h3 class="cv-heading mono">Certifications</h3>
+          <ol class="timeline">
+            <!-- EDIT: certifications -->
+            <li>
+              <span class="when mono">Certificate</span>
+              <div>
+                <h4>Supervised Machine Learning: Regression and Classification</h4>
+                <p>DeepLearning.AI · Stanford University</p>
+              </div>
+            </li>
+            <li>
+              <span class="when mono">Certificate</span>
+              <div>
+                <h4>Advanced Learning Algorithms</h4>
+                <p>DeepLearning.AI · Stanford University</p>
+              </div>
+            </li>
+          </ol>
+
+          <h3 class="cv-heading mono">Awards &amp; extras</h3>
+          <ol class="timeline">
+            <!-- EDIT: awards, competitions -->
+            <li>
+              <span class="when mono">2023</span>
+              <div>
+                <h4>SURI 2023 Fellowship · Arizona State University</h4>
+                <p>Awarded for exceptional research contributions during the Summer Undergraduate Research Internship.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="wrap two-col">
+        <div>
+          <p class="label mono">04 — Signal</p>
+          <h2>Contact</h2>
+        </div>
+        <ul class="links mono">
+          <!-- EDIT: your links -->
+          <li><span class="muted">Email</span><a href="mailto:kkristjansson42@gmail.com">kkristjansson42@gmail.com</a></li>
+          <li><span class="muted">GitHub</span><a href="https://github.com/kristofer0907">github.com/kristofer0907</a></li>
+          <li><span class="muted">LinkedIn</span><a href="https://www.linkedin.com/in/kristofer-kristjansson">linkedin.com/in/kristofer-kristjansson</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer mono muted">
+    <span>© <span id="year"></span> Kristofer Kristjansson</span>
+    <a href="#">Back to top ↑</a>
+  </footer>
+
+  <dialog id="modal" class="modal" aria-labelledby="modal-title">
+    <button class="modal-close" aria-label="Close">×</button>
+    <div class="modal-media">
+      <img id="modal-img" alt="">
+      <div id="modal-thumbs" class="thumbs"></div>
+    </div>
+    <div class="modal-body">
+      <p id="modal-meta" class="mono muted small"></p>
+      <h3 id="modal-title"></h3>
+      <div id="modal-desc"></div>
+      <ul id="modal-tags" class="tags"></ul>
+      <div id="modal-links" class="modal-links mono"></div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
